@@ -6,7 +6,7 @@ def get_dictionary(num):
         key = input("Enter key: ")
         value = input("Enter value: ")
         
-        # Try converting values to numbers if possible
+        
         if value.isdigit():
             value = int(value)
         elif value.replace('.', '', 1).isdigit():
@@ -17,21 +17,21 @@ def get_dictionary(num):
 
 
 def merge_dictionaries(dict1, dict2):
-    merged_dict = dict1.copy()  # Start with a copy of the first dictionary
+    merged_dict = dict1.copy()  
     
     for key, value in dict2.items():
         if key in merged_dict:
-            # If both values are numbers, add them
+            
             if isinstance(merged_dict[key], (int, float)) and isinstance(value, (int, float)):
                 merged_dict[key] += value
-            # If both values are strings, concatenate them
+            
             elif isinstance(merged_dict[key], str) and isinstance(value, str):
                 merged_dict[key] += " " + value
             else:
-                # If different data types, store them as a list
+                
                 merged_dict[key] = [merged_dict[key], value]
         else:
-            merged_dict[key] = value  # If key is unique, just add it
+            merged_dict[key] = value 
             
     return merged_dict
 

@@ -16,7 +16,7 @@ print("\nEnter values for the second dictionary:")
 dict2 = get_dictionary(2)
 
 
-merged_dict = {**dict1, **dict2}  # Using dictionary unpacking
+merged_dict = {**dict1, **dict2}  
 
 
 print("\nMerged Dictionary:", merged_dict)
